@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+.btn,
+.jumbotron,
+.nav :hover {
+  border-radius: 0px;
+}
+body,
+.bg-dark {
+  background: #e5c9fb !important;
+  font-family: 'Poppins', sans-serif;
+  
+}
+.nav-item{
+  cursor: pointer;
+}
+/* footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+} */
+/* .errorMessage{
+  background-color: aliceblue;
+} */
