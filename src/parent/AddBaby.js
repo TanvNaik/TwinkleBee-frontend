@@ -262,9 +262,28 @@ export default function AddBaby() {
 
         )
     }
+    const errorMessage   = () => {
+      return (
+        <div className="row">
+          <div className="col-md-6 offset-sm-3 text-left">
+            {error &&
+              error.map((err, key) => {
+                if (err.param == "general")
+                  return (
+                    <div key={key} className="errorMessage  alert-danger text-danger">
+                      <h2 style={{ fontSize: "1.2rem" }}>{err.msg}</h2>
+                    </div>
+                  );
+              })}
+            
+          </div>
+        </div>
+      );
+    };
   return (
     <Base title={"Add Baby Profile"}>
         {successMessage()}
+      {errorMessage()}
         {addBabyForm()}
         
 

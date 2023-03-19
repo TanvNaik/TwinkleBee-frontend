@@ -8,9 +8,6 @@ const AdminDashBoard = () => {
   } = isAuthenticated();
 
 
-
-
-
   const adminLeftSide = () => {
     return (
       <div className='card'>
@@ -28,7 +25,10 @@ const AdminDashBoard = () => {
             <Link to='/admin/payments' className='nav-link text-success'>
               Check Payments
             </Link>
-          {/*  TODO: Add Admin */}
+            <Link to='/admin/add-admin' className='nav-link text-success'>
+              Add Admin
+            </Link>
+
 
           </li>
         </ul>

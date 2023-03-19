@@ -44,3 +44,15 @@ export const addDoctorInfo = (babyId, doctor) => {
     }).then(response => response.json())
   .catch(err => console.log(err))
 }
+
+export const addBooking = (userId, booking) => {
+  return fetch(`${API}/createBooking/${userId}`,{
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(booking)
+    }).then(response => response.json())
+  .catch(err => console.log(err))
+}

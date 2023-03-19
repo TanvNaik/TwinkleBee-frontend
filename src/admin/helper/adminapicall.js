@@ -1,29 +1,49 @@
 import { API } from "../../backend";
 
-// Categoriy Calls
-export const createCategory = (userId, token, category) => {
-  return fetch(`${API}/category/create/${userId}`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    },
-    body: JSON.stringify(category)
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .catch((error) => console.log(error));
-};
-// get all categories
-export const getAllCategories = () => {
-  return fetch(`${API}/categories`, {
+
+// get all bookings
+export const getAllBookings = () => {
+  return fetch(`${API}/bookings`, {
     method: "GET"
   })
     .then((res) => res.json())
     .catch((err) => console.log(err));
 };
+
+//approve a booking
+export const approveBooking = (bookingId, userId) => {
+  return fetch(`${API}/approve/${userId}/${bookingId}`, {
+    method: "PUT",
+    headers:{
+      'Content-Type': "application/json"
+    }
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+//reject a booking
+export const rejectBooking = (bookingId, userId) => {
+  return fetch(`${API}/reject/${userId}/${bookingId}`, {
+    method: "PUT",
+    headers:{
+      'Content-Type': "application/json"
+    }
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+
+
+
 // get a category
 export const getCategory = (categoryId) => {
   return fetch(`${API}/category/${categoryId}`, {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { isAuthenticated } from '../auth/helper'
 import Base from '../core/Base'
-import { getUserBabies } from '../parent/helper/parentapicalls'
+import { addBooking, getUserBabies } from './helper/parentapicalls'
 
 export default function BookService() {
   const {user,token} = isAuthenticated()
@@ -19,6 +19,18 @@ export default function BookService() {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(babyId)
+
+    addBooking(user._id,values)
+    .then(data => {
+      if(data.error){
+        setValues({...values,error: data.error})
+      }
+      else{
+        setValues({...values, success: true})
+        alert("Form Submitted successfully!")
+      }
+    })
+    
     // if(contact1.length != 10){
     //   return setValues({...values, error:[
     //     {
@@ -61,6 +73,19 @@ export default function BookService() {
     })
   },[])
 
+  const successMessage = () => {
+    return (
+      <div className="row">
+        <div className="col-md-6 offset-sm-3 text-left">
+          <div
+            className="alert alert-success"
+            style={{ display: success ? "" : "none" }}
+          >Booking Request was created successfully. Please wait until the admin approves
+          </div>
+        </div>
+      </div>
+    );
+  };
   const calculateFees = (e) => {
     e.preventDefault()
     console.log(hoursperday)
@@ -200,7 +225,7 @@ export default function BookService() {
                       onChange={handleChange("fees")}
                     /> &nbsp; &nbsp;
                     <button onClick={calculateFees} className='btn-success bg-warning text-dark'>Calculate Fees</button>
-{/* TODO: create a button n call calculateFees */}
+
                   </div>          
                       
              
@@ -219,6 +244,7 @@ export default function BookService() {
   }
   return (
     <Base title='Booking'>
+      {successMessage()}
         {bookingForm()}
     </Base>
   )

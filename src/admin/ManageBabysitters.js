@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
-import { getAllCategories, deleteCategory } from "./helper/adminapicall";
+import {  } from "./helper/adminapicall";
 import { isAuthenticated } from "../auth/helper";
 
 const ManageBabysitters = () => {
@@ -9,24 +9,24 @@ const ManageBabysitters = () => {
   const { user, token } = isAuthenticated();
 
   const preload = () => {
-    getAllCategories().then((data) => {
-      if (data.error) {
-        console.log(data.error);
-      } else {
-        setCategories(data);
-      }
-    });
+    // getAllCategories().then((data) => {
+    //   if (data.error) {
+    //     console.log(data.error);
+    //   } else {
+    //     setCategories(data);
+    //   }
+    // });
   };
 
-  const deleteaCategory = (categoryId) => {
-    deleteCategory(categoryId, user._id, token).then((data) => {
-      if (data.error) {
-        console.log(data.error);
-      } else {
-        preload();
-      }
-    });
-  };
+  // const deleteaCategory = (categoryId) => {
+  //   deleteCategory(categoryId, user._id, token).then((data) => {
+  //     if (data.error) {
+  //       console.log(data.error);
+  //     } else {
+  //       preload();
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
     preload();
@@ -34,7 +34,7 @@ const ManageBabysitters = () => {
 
   return (
     <Base title='Welcome admin' description='Manage categories here'>
-      <Link className='btn btn-info' to={`/admin/dashboard`}>
+      {/* <Link className='btn btn-info' to={`/admin/dashboard`}>
         <span className=''>Admin Home</span>
       </Link>
       <h2 className='mb-4'>All Categories:</h2>
@@ -72,7 +72,7 @@ const ManageBabysitters = () => {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </Base>
   );
 };

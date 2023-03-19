@@ -32,6 +32,9 @@ const ParentDashboard = () => {
             <Link to={"../../booking"} className='nav-link ' style={{color: "#6C70FE"}}>
               Book a Service
             </Link>
+            <Link to={"../../bookings/view"} className='nav-link ' style={{color: "#6C70FE"}}>
+              View Bookings
+            </Link>
           </li>
         </ul>
       </div>

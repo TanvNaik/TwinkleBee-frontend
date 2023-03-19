@@ -5,15 +5,11 @@ import PrivateRoute from "./auth/helper/PrivateRoutes";
 import Home from "./core/Home";
 import Signin from "./user/Signin";
 import Signup from "./user/Signup";
-import ParentDashboard from "./user/ParentDashboard";
-import BabysitterDashboard from "./user/BabysitterDashboard";
-import AdminDashboard from "./user/AdminDashBoard";
-import AddCategory from "./admin/AddCategory";
+import ParentDashboard from "./parent/ParentDashboard";
+import BabysitterDashboard from "./babysitter/BabysitterDashboard";
+import AdminDashBoard from "./admin/AdminDashBoard";
 import ManageBabysitters from "./admin/ManageBabysitters";
-import AddProduct from "./admin/AddProduct";
 import ManageBookings from "./admin/ManageBookings";
-import UpdateProduct from "./admin/UpdateProduct";
-import UpdateCategory from "./admin/UpdateCategory";
 import UpdateProfile from "./user/UpdateProfile";
 import AddBaby from "./parent/AddBaby"
 import ManageBabies from "./parent/ManageBabies";
@@ -21,7 +17,9 @@ import ContactUs from "./core/ContactUs";
 import ViewFeedbacks from "./babysitter/ViewFeedbacks";
 import AddVaccination from "./baby/AddVaccination";
 import AddDoctor from "./baby/AddDoctor";
-import BookService from "./booking/BookService";
+import BookService from "./parent/BookService";
+import AddAdmin from "./admin/AddAdmin";
+import ViewBaby from "./user/ViewBaby";
 
 export default function Routers() {
   return (
@@ -32,14 +30,10 @@ export default function Routers() {
         <Route path="/signin" exact element={<Signin />} />
 
         {/* ADMIN ROUTES */}
-        <Route element={<AdminRoute />}>
-         
-          <Route path="/admin/bookings" exact element={<ManageBookings />} />
-          <Route path="/admin/babysitters" exact element={<ManageBabysitters />} />
-          <Route path="/admin/payments" exact element={<ManageBabysitters />} />
-          
-        </Route>
-        <Route path="/admin/dashboard" exact element={<AdminDashboard />} />
+        
+        <Route path="/admin/dashboard" exact element={<AdminDashBoard />} />
+        <Route path="/admin/bookings" exact element={<ManageBookings />} />
+        <Route path="/admin/add-admin" exact element={<AddAdmin />} />
 
 
 
@@ -58,6 +52,7 @@ export default function Routers() {
         {/* BABY */}
         <Route path="/:babyId/vaccine" exact element={<AddVaccination />} />
         <Route path="/:babyId/doctor" exact element={<AddDoctor />} />
+        <Route path="/baby/:babyId" exact element={<ViewBaby />} />
 
 
         <Route path="/parent/dashboard" exact element={<ParentDashboard />} />
