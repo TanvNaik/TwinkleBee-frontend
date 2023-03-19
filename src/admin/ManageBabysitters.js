@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getAllCategories, deleteCategory } from "./helper/adminapicall";
 import { isAuthenticated } from "../auth/helper";
 
-const ManageCategories = () => {
+const ManageBabysitters = () => {
   const [categories, setCategories] = useState([]);
   const { user, token } = isAuthenticated();
 
@@ -77,4 +77,4 @@ const ManageCategories = () => {
   );
 };
 
-export default ManageCategories;
+export default ManageBabysitters;

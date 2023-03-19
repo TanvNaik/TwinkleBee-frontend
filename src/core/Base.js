@@ -8,7 +8,7 @@ const Base = ({
   return (
     <div>
       <Nav></Nav>
-      <div className='contain-fluid'>
+      <div className='contain-fluid mt-2'>
         <div className=' jumbotron  text-center'>
           <h3 className=''>{title}</h3>
           

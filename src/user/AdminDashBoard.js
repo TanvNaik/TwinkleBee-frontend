@@ -7,27 +7,29 @@ const AdminDashBoard = () => {
     user: { name, email, role }
   } = isAuthenticated();
 
+
+
+
+
   const adminLeftSide = () => {
     return (
       <div className='card'>
-        <h4 className='card-header bg-dark text-white'> Admin Navigation </h4>
+        <h4 className='card-header ' style={{fontSize: "1.2rem"}}> Admin Navigation </h4>
         <ul className='list-group'>
           <li className='list-group-item'>
-            <Link to='/admin/create/category' className='nav-link text-success'>
-              Create Category
+            <Link to='/admin/babysitters' className='nav-link text-success'>
+              Manage Babysitters
             </Link>
-            <Link to='/admin/categories' className='nav-link text-success'>
-              Manage Categories
+           
+            <Link to='/admin/bookings' className='nav-link text-success'>
+              Manage Bookings
             </Link>
-            <Link to='/admin/create/product' className='nav-link text-success'>
-              Create Products
+
+            <Link to='/admin/payments' className='nav-link text-success'>
+              Check Payments
             </Link>
-            <Link to='/admin/products' className='nav-link text-success'>
-              Manage Products
-            </Link>
-            <Link to='/admin/orders' className='nav-link text-success'>
-              Manage Orders
-            </Link>
+          {/*  TODO: Add Admin */}
+
           </li>
         </ul>
       </div>
@@ -67,9 +69,8 @@ const AdminDashBoard = () => {
   };
   return (
     <Base
-      title='Welcome to Admin area'
-      description='Manage all your products here'
-      className='container bg-success p-4'
+      title='Welcome to Admin area '
+      className='container bg-success p-4 mb-2'
     >
       <div className='row'>
         <div className='col-3'>{adminLeftSide()}</div>

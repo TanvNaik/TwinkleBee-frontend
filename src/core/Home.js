@@ -18,7 +18,7 @@ const Home = () => {
       <div className=" d-flex  justify-content-center align-items-center">
         
         {images.map((product, index) => {
-              return <div className="m-4">
+              return <div className="m-4" key={index}>
                 <img
                 width="100%"
                 src={product}

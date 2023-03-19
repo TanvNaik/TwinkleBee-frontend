@@ -3,97 +3,123 @@ import { isAuthenticated } from "../auth/helper";
 import { Link, Navigate } from "react-router-dom";
 
 import Base from "../core/Base";
+
+
+
 const BabysitterDashboard = () => {
-  const { user, token } = isAuthenticated();
-  return (
-    <Base title="Dash Board" description={"Welcome " + user.name}>
-      <div className="d-flex flex-column">
-        <div
-          className="w-100 d-flex justify-content-evenly
-"
-        >
-          <div className="w-25">
-            {user.profile_pic && (
-              <img
-                width="60%"
-                src={`http://localhost:8800/image/${user.profile_pic}`}
+  const {
+    user: { name, email, profile_pic, adhaarNumber, contactNumber,  role }
+  } = isAuthenticated();
+
+  const babysitterLeftSide = () => {
+    return (
+      <div className='card w-100 h-100'>
+        <h4 className='card-header ' style={{fontSize: "1.2rem"}}> Babysitter Dashboard </h4>
+        <ul className='list-group'>
+          <li className='list-group-item'>
+          <Link to={"../../update-profile"} className='nav-link ' style={{color: "#6C70FE"}}>
+              Update Profile
+            </Link>
+            <Link to={"../../search"} className='nav-link ' style={{color: "#6C70FE"}}>
+              Search Medicines
+            </Link>
+            <Link to={"../../feedbacks"} className='nav-link ' style={{color: "#6C70FE"}}>
+              Feedbacks
+            </Link>
+            <Link to={"../../chat"} className='nav-link ' style={{color: "#6C70FE"}}>
+              Chat
+            </Link>
+          </li>
+        </ul>
+      </div>
+    );
+  };
+  const babysitterRightSide = () => {
+    return (
+      <div className='card mb-4 w-100 h-100'>
+        <h4 className='card-header'>Profile</h4>
+        <ul className='list-group'>
+          <li className='list-group-item'>
+            <span
+              className='badge bg-success 
+               mr-2'
+            >
+              Name:
+            </span>
+            &nbsp;
+            {name}
+          </li>
+          <li className='list-group-item'>
+            <span
+              className='badge bg-success 
+               mr-2 '
+            >
+              Email:
+            </span>
+            &nbsp;
+            {email}
+          </li>
+          <li className='list-group-item'>
+            <span
+              className='badge bg-success 
+               mr-2 '
+            >
+              Adhaar Number:
+            </span>
+            &nbsp;
+            {adhaarNumber}
+          </li>
+          <li className='list-group-item'>
+            <span
+              className='badge bg-success 
+               mr-2 '
+            >
+              Contact Number:
+            </span>
+            &nbsp;
+            {contactNumber}
+          </li>
+          <li className='list-group-item'>
+            <span className='badge bg-warning text-dark'>Babysitter Area</span>
+          </li>
+        </ul>
+      </div>
+    );
+  };
+
+  const babysitterProfilePic = () => {
+    return(
+      <div className='card  w-100 h-100' >
+        {/* <h4 className='card-header'></h4> */}
+        
+      
+            {profile_pic && (
+              <img width={"100%"} 
+                src={`http://localhost:8800/image/${profile_pic}`}
               />
             )}
-            {!user.profile_pic && (
+            {!profile_pic && (
               <img src={`http://localhost:8800/image/default_female_pp.png`} />
             )}
-          </div>
-
-          <div className="w-75 fs-4">
-            <span
-              className="text-info
-                "
-            >
-              Name:{" "}
-            </span>
-            <span>{user.name}</span>
-            <br />
-            <span
-              className="text-info
-                "
-            >
-              Username:{" "}
-            </span>
-            <span>{user.username}</span>
-            <br />
-            <span
-              className="text-info
-                "
-            >
-              Email-Id:{" "}
-            </span>
-            <span>{user.email}</span>
-            <br />
-            <span
-              className="text-info
-                "
-            >
-              Adhaar Number:{" "}
-            </span>
-            <span>{user.adhaarNumber}</span>
-            <br />
-            <span
-              className="text-info
-                "
-            >
-              Contact Number:{" "}
-            </span>
-            <span>{user.contactNumber}</span>
-            <br />
-            <span
-              className="text-info
-                "
-            >
-              Gender:{" "}
-            </span>
-            <span>{user.gender}</span>
-            <br />
-          </div>
-        </div>
-        <div className="w-100 m-0 justify-content-center align-items-center">
-          <div className="d-flex  w-100 justify-content-evenly align-items-center">
-            <Link to={"../../update-profile"}>
-              <button className="btn-info  p-3 w-100">Update Profile</button>
-            </Link>
-            <Link to={"../../search"}>
-              <button className="btn-info  p-3 w-100">Search Medicines</button>
-            </Link>
-            <Link to={"../../feedbacks"}>
-              <button className="btn-info m-4 p-3 w-100">Feedbacks</button>
-            </Link>
-            <Link to={"../../chat"}>
-              <button className="btn-info m-4 p-3 w-100">Chat</button>
-            </Link>
-          </div>
-        </div>
+        
+        
+      </div>
+    )
+    
+  }
+  return (
+    <Base
+      title='Welcome to Dashboard '
+      className='container bg-success p-4 mb-2'
+    >
+      <div className='row '>
+        <div className='col-3 d-flex justify-content-center align-items-center'>{babysitterLeftSide()}</div>
+        <div className='col-6  '>{babysitterRightSide()}</div>
+        <div className="col-3 d-flex justify-content-center align-items-center">{babysitterProfilePic()}</div>
       </div>
     </Base>
   );
 };
 
 export default BabysitterDashboard;
+

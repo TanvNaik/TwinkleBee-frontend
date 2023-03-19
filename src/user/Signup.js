@@ -40,7 +40,7 @@ const Signup = () => {
 
   const changeSection = (name) => (event) => {
     setSection(event.target.value);
-    if (section === "parent") formData.set(role, 2);
+    if (section === "parent") formData.set("role", 2);
     else formData.set("role", 1);
   };
 
@@ -57,8 +57,9 @@ const Signup = () => {
       console.log(pair[0] + ", " + pair[1]);
     }
 
-    // formData.set(role, (section === 'parent' ? 2 : 1) );
+    formData.set("role", (section === 'parent' ? 2 : 1) );
     setValues({ ...values, error: "" });
+    console.log(formData)
     signup(formData).then((data) => {
       if (data.error) {
         console.log(data.error);
@@ -74,8 +75,223 @@ const Signup = () => {
       <div>
         {section === "parent" && (
           <form>
-            <div className="d-flex justify-content-between w-75 ">
-              <div className="w-50">
+            <div className="d-flex justify-content-evenly w-100 mt-4"  >
+              <div className="w-25" >
+                <div className=" text-left">
+                <div className="form-group">
+                      <label  >Name:</label>
+                      <input
+                        className="form-control"
+                        onChange={handleChange("name")}
+                        type="text"
+                        value={name}
+                      />
+                      <b>
+                        <span className="errorMessage  alert-danger text-danger  ">
+                          {error &&
+                            error.slice(0, 10).map((err) => {
+                              if (err.param === "name")
+                                return (
+                                  <>
+                                    {err.msg}
+                                    <br />
+                                  </>
+                                );
+                            })}
+                        </span>{" "}
+                      </b>{" "}
+                      <br />
+                    </div>
+                </div>
+                <div className="form-group">
+                      <label  >Username:</label>
+                      <input
+                        className="form-control"
+                        onChange={handleChange("username")}
+                        type="text"
+                        value={username}
+                      />
+                      
+                      <b>
+                        <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
+                          {error &&
+                            error.slice(0, 10).map((err) => {
+                              if (err.param === "username")
+                                return (
+                                  <>
+                                    {err.msg}
+                                    <br />
+                                  </>
+                                );
+                            })}
+                        </span>{" "}
+                      </b>{" "}
+                      <br />
+                    </div>
+                <div className="form-group">
+                          <label  >Email:</label>
+                          <input
+                              className="form-control"
+                              onChange={handleChange("email")}
+                              type="email"
+                              value={email}
+                            />
+                            <br />
+                            <b>
+                              <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
+                                {error &&
+                                  error.map((err) => {
+                                    if (err.param === "email") return err.msg;
+                                  })}
+                              </span>{" "}
+                            </b><br/>
+                          </div>
+                    <div className="form-group">
+                            <b>
+                              <span className="errorMessage  alert-danger text-danger  alert-danger text-danger  alert-danger text-danger">
+                                {error &&
+                                  error.map((err) => {
+                                    if (err.param === "gender") return err.msg;
+                                  })}
+                              </span>
+                            </b>
+                            Gender:
+                            <input
+                              onChange={handleChange("gender")}
+                              type="radio"
+                              className="m-2"
+                              name="gender"
+                              value="Female"
+                            />
+                            Female
+                            <input
+                              onChange={handleChange("gender")}
+                              type="radio"
+                              name="gender"
+                              className="m-2"
+                              value="Male"
+                            />
+                            Male
+                          </div><br/>
+                  <div className="form-group">
+                    <label  >Adhaar Number:</label>
+                    <input
+                      className="form-control"
+                      onChange={handleChange("adhaarNumber")}
+                      type="text"
+                      value={adhaarNumber}
+                    />
+                  </div>
+                    
+              </div>
+
+              <div className="w-25">
+              <div className="form-group">
+                      <label  >Occupation:</label>
+                      <input
+                        className="form-control"
+                        onChange={handleChange("occupation")}
+                        type="text"
+                        value={occupation}
+                      />
+                    </div>
+                  <div className="form-group">
+                    <label  >Contact Number:</label>
+                    <input
+                      className="form-control"
+                      onChange={handleChange("contactNumber")}
+                      type="number"
+                      value={contactNumber}
+                    />
+                    
+                    <b>
+                      <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
+                        {error &&
+                          error.map((err) => {
+                            if (err.param === "contactNumber") return err.msg;
+                          })}
+                      </span>{" "}
+                    </b><br/>
+                  </div>
+                 <div className="form-group">
+                    <label  >Password:</label>
+                    <input
+                      className="form-control"
+                      onChange={handleChange("password")}
+                      type="password"
+                      value={password}
+                    />
+                    
+                    <b>
+                      <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
+                        {error &&
+                          error.slice(0, 10).map((err) => {
+                            if (err.param === "password")
+                              return (
+                                <>
+                                  {err.msg}
+                                  <br />
+                                </>
+                              );
+                          })}
+                      </span>{" "}
+                    </b><br/>
+                </div>
+                <div className="form-group">
+                    <label  >Confirm Password:</label>
+                    <input
+                      className="form-control"
+                      onChange={handleChange("cfPassword")}
+                      type="password"
+                      value={cfPassword}
+                    />
+                    
+                    <b>
+                      <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
+                        {error &&
+                          error.map((err) => {
+                            if (err.param === "cfPassword") return err.msg;
+                          })}
+                      </span>{" "}
+                    </b><br/>
+                </div>
+                <div className="form-group">
+                    <label  >Profile Pic:</label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      name="pp"
+                      id="pp"
+                      required={true}
+                      accept="image/*"
+                      onChange={handleChange("pp")}
+                    />
+                    
+                    <b>
+                      <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
+                        {error &&
+                          error.map((err) => {
+                            if (err.param === "pp") return err.msg;
+                          })}
+                      </span>{" "}
+                    </b><br/>
+                </div>            
+              </div>
+
+            </div><br/>
+            <div className="w-100 text-center">
+            <button onClick={onSubmit} className="btn btn-success " style={{width: "8rem"}}>
+                 Submit
+            </button>
+            </div>
+            
+          </form>
+          
+        )}
+        {section === "babysitter" && (
+          <form>
+            <div className="d-flex justify-content-evenly w-100 mt-4 ">
+              <div className="w-25">
                 <div className=" text-left">
                 <div className="form-group">
                       <label  >Name:</label>
@@ -181,15 +397,11 @@ const Signup = () => {
                       value={adhaarNumber}
                     />
                   </div>
-                    <div className="form-group">
-                      <label  >Occupation:</label>
-                      <input
-                        className="form-control"
-                        onChange={handleChange("occupation")}
-                        type="text"
-                        value={occupation}
-                      />
-                    </div>
+                    
+              </div>
+
+              <div className="w-25">
+              
                   <div className="form-group">
                     <label  >Contact Number:</label>
                     <input
@@ -208,9 +420,6 @@ const Signup = () => {
                       </span>{" "}
                     </b><br/>
                   </div>
-              </div>
-
-              <div className="w-50">
                  <div className="form-group">
                     <label  >Password:</label>
                     <input
@@ -275,221 +484,18 @@ const Signup = () => {
                     </b><br/>
                 </div>            
               </div>
-              
 
-
-
-
+            </div><br/>
+            <div className="w-100 text-center">
+            <button onClick={onSubmit} className="btn btn-success " style={{width: "8rem"}}>
+                 Submit
+            </button>
             </div>
+            
           </form>
           
-          
-          
-          
-
-          //     <br />
-          //     <button onClick={onSubmit} className="btn btn-success w-100">
-          //       Submit
-          //     </button>
-          //   </form>
-          // </div>
         )}
-        {section === "babysitter" && (
-          <div className="col-md-6 offset-sm-3 text-left">
-            <form>
-              <div className="form-group">
-                <label  >Name:</label>
-                <input
-                  className="form-control"
-                  onChange={handleChange("name")}
-                  type="text"
-                  value={name}
-                />
-                <br />
-                <b>
-                  <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
-                    {error &&
-                      error.slice(0, 10).map((err) => {
-                        if (err.param === "name")
-                          return (
-                            <>
-                              {err.msg}
-                              <br />
-                            </>
-                          );
-                      })}
-                  </span>{" "}
-                </b>
-              </div>
-              <div className="form-group">
-                <label  >Username:</label>
-                <input
-                  className="form-control"
-                  onChange={handleChange("username")}
-                  type="text"
-                  value={username}
-                />
-                <br />
-                <b>
-                  <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
-                    {error &&
-                      error.slice(0, 10).map((err) => {
-                        if (err.param === "username")
-                          return (
-                            <>
-                              {err.msg}
-                              <br />
-                            </>
-                          );
-                      })}
-                  </span>{" "}
-                </b>
-              </div>
-              <div className="form-group">
-                <label  >Email:</label>
-                <input
-                  className="form-control"
-                  onChange={handleChange("email")}
-                  type="email"
-                  value={email}
-                />
-                <br />
-                <b>
-                  <span className="errorMessage  alert-danger text-danger">
-                    {error &&
-                      error.map((err) => {
-                        if (err.param === "email") return err.msg;
-                      })}
-                  </span>{" "}
-                </b>
-              </div>
-              <div className="form-group">
-                <b>
-                  <span className="errorMessage  alert-danger text-danger">
-                    {error &&
-                      error.map((err) => {
-                        if (err.param === "gender") return err.msg;
-                      })}
-                  </span>{" "}
-                </b>
-                Gender:
-                <input
-                  onChange={handleChange("gender")}
-                  type="radio"
-                  className="m-2"
-                  name="gender"
-                  value="Female"
-                />
-                Female
-                <input
-                  onChange={handleChange("gender")}
-                  type="radio"
-                  name="gender"
-                  className="m-2"
-                  value="Male"
-                />
-                Male
-              </div>
-              <div className="form-group">
-                <label  >Adhaar Number:</label>
-                <input
-                  className="form-control"
-                  onChange={handleChange("adhaarNumber")}
-                  type="text"
-                  value={adhaarNumber}
-                />
-              </div>
-
-              <div className="form-group">
-                <label  >Contact Number:</label>
-                <input
-                  className="form-control"
-                  onChange={handleChange("contactNumber")}
-                  type="number"
-                  value={contactNumber}
-                />
-                <br />
-                <b>
-                  <span className="errorMessage  alert-danger text-danger">
-                    {error &&
-                      error.map((err) => {
-                        if (err.param === "contactNumber") return err.msg;
-                      })}
-                  </span>{" "}
-                </b>
-              </div>
-
-              <div className="form-group">
-                <label  >Password:</label>
-                <input
-                  className="form-control"
-                  onChange={handleChange("password")}
-                  type="password"
-                  value={password}
-                />
-                <br />
-                <b>
-                  <span className="errorMessage  alert-danger text-danger">
-                    {error &&
-                      error.slice(0, 10).map((err) => {
-                        if (err.param === "password")
-                          return (
-                            <>
-                              {err.msg}
-                              <br />
-                            </>
-                          );
-                      })}
-                  </span>{" "}
-                </b>
-              </div>
-              <div className="form-group">
-                <label  >Confirm Password:</label>
-                <input
-                  className="form-control"
-                  onChange={handleChange("cfPassword")}
-                  type="password"
-                  value={cfPassword}
-                />
-                <br />
-                <b>
-                  <span className="errorMessage  alert-danger text-danger">
-                    {error &&
-                      error.map((err) => {
-                        if (err.param === "cfPassword") return err.msg;
-                      })}
-                  </span>{" "}
-                </b>
-              </div>
-              <div className="form-group">
-                <label  >Profile Pic:</label>
-                <input
-                  className="form-control"
-                  type="file"
-                  name="pp"
-                  id="pp"
-                  required={true}
-                  accept="image/*"
-                  onChange={handleChange("pp")}
-                />
-                <br />
-                <b>
-                  <span className="errorMessage  alert-danger text-danger">
-                    {error &&
-                      error.map((err) => {
-                        if (err.param === "pp") return err.msg;
-                      })}
-                  </span>{" "}
-                </b>
-              </div>
-
-              <br />
-              <button onClick={onSubmit} className="btn btn-success w-100">
-                Submit
-              </button>
-            </form>
-          </div>
-        )}
+        
       </div>
     );
   };

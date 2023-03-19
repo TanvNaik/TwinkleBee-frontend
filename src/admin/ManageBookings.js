@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth/helper/index.js";
 import { deleteProduct, getAllProducts } from "./helper/adminapicall.js";
 
-const ManageProducts = () => {
+const ManageBookings = () => {
   const [products, setProducts] = useState([]);
   const { user, token } = isAuthenticated();
   const preload = () => {
@@ -75,4 +75,4 @@ const ManageProducts = () => {
   );
 };
 
-export default ManageProducts;
+export default ManageBookings;

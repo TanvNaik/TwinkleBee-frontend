@@ -15,19 +15,19 @@ const Nav = ({  history }) =>{
   };
   return (
     <div>
-      <ul className='nav nav-tabs justify-content-end ' style={{"font-size":" 1rem"}}>
+      <ul className='nav nav-tabs justify-content-end ' style={{fontSize:" 1rem"}}>
         <li className='nav-item'>
           <Link style={currentTab("/")} className='nav-link ' to='/'>
             Home
           </Link>
         </li>
         
-        {/* {isAuthenticated() && isAuthenticated().user.role === 0 && (
+        {isAuthenticated() && isAuthenticated().user.role === 0  && (
           <li className='nav-item'>
             <Link
               style={currentTab("/user/dashboard")}
               className='nav-link '
-              to='/user/dashboard'
+              to='/admin/dashboard'
             >
               Dashboard
             </Link>
@@ -36,14 +36,25 @@ const Nav = ({  history }) =>{
         {isAuthenticated() && isAuthenticated().user.role === 1 && (
           <li className='nav-item'>
             <Link
-              style={currentTab("/admin/dashboard")}
+              style={currentTab("/babysitter/dashboard")}
               className='nav-link '
-              to='/admin/dashboard'
+              to='/babysitter/dashboard'
             >
               Dashboard
             </Link>
           </li>
-        )} */}
+        )}
+        {isAuthenticated() && isAuthenticated().user.role === 2 && (
+          <li className='nav-item'>
+            <Link
+              style={currentTab("/parent/dashboard")}
+              className='nav-link '
+              to='/parent/dashboard'
+            >
+              Dashboard
+            </Link>
+          </li>
+        )}
         {!isAuthenticated() && (
           <Fragment>
             <li className='nav-item'>
@@ -66,6 +77,17 @@ const Nav = ({  history }) =>{
             </li>
           </Fragment>
         )}
+        <li className='nav-item'>
+              <Link
+                style={currentTab("/contact-us")}
+                className='nav-link '
+                to='/contact-us'
+              >
+                Contact Us
+              </Link>
+        </li>
+            
+
         {isAuthenticated() && (
           <li className='nav-item'>
             <span

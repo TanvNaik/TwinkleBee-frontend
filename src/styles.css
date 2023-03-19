@@ -8,12 +8,36 @@
 }
 body,
 .bg-dark {
-  background: #e5c9fb !important;
+  background: #f7dffa !important;
   font-family: 'Poppins', sans-serif;
   
 }
 .nav-item{
   cursor: pointer;
+}
+.bg-success{
+  background-color: #6C70FE !important;
+}
+.btn-success{
+  background-color: #6C70FE;
+  border: none;
+}
+.btn-success:hover{
+  background-color: #ffffff;
+  color: #6C70FE;
+  border: #6C70FE 2px solid;
+}
+.form-group{
+  font-size: 0.8rem;
+  font-weight: 600;
+  
+}
+.form-group input{
+  
+  font-size: 0.8rem;
+}
+.text-danger{
+  font-weight: 600;
 }
 /* footer {
   position: relative;

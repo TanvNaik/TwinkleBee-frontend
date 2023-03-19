@@ -100,12 +100,12 @@ const Signin = () => {
   };
   const signInForm = () => {
     return (
-      <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
-          <form>
-            <div className="form-group">
-              <label className="text-light">Email or Username:</label>
-              <input
+      <form>
+      <div className="d-flex justify-content-center  mt-4">
+        <div className="w-25">
+        <div className="form-group">
+               <label >Email or Username: </label>
+               <input
                 className="form-control"
                 value={username}
                 onChange={handleChange("username")}
@@ -118,8 +118,8 @@ const Signin = () => {
               <br/>
             </div>
             <div className="form-group">
-              <label className="text-light">Password:</label>
-              <input
+               <label >Password:</label>
+               <input
                 className="form-control"
                 value={password}
                 onChange={handleChange("password")}
@@ -128,14 +128,26 @@ const Signin = () => {
               <span className="errorMessage alert-danger">{perror}</span>
             </b>
             <br/>
+            <div className="text-center">
+            <button onClick={onSubmit} className="btn btn-success w-25 p-1"  >
+               Submit
+             </button>
             </div>
-            <br />
-            <button onClick={onSubmit} className="btn btn-success w-100">
-              Submit
-            </button>
-          </form>
+            
+            </div>
         </div>
       </div>
+      </form>
+      // <div className="row">
+      //   <div className="col-md-6 offset-sm-3 text-left">
+      //     
+      //       
+      //       
+      //       <br />
+      //       
+      //     </form>
+      //   </div>
+      // </div>
     );
   };
   return (
