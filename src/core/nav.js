@@ -77,6 +77,17 @@ const Nav = ({  history }) =>{
             </li>
           </Fragment>
         )}
+        {isAuthenticated() && (
+          <li className='nav-item'>
+            <Link
+                style={currentTab("/chat")}
+                className='nav-link '
+                to='/chat'
+              >
+                Chat
+              </Link>
+          </li>
+        )}
         <li className='nav-item'>
               <Link
                 style={currentTab("/contact-us")}

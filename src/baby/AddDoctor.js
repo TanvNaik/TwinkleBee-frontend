@@ -10,7 +10,7 @@ export default function AddDoctor() {
   const [values, setValues] = useState({
     name: "",
     gender: "",
-    contact:[],
+    contact:"",
     contact1: "",
     contact2:"",
     address: "",
@@ -34,16 +34,15 @@ export default function AddDoctor() {
         }
       ]})
     }
-    setValues({...values, contact: [contact1, contact2]})
-    console.log(values)
-    // setValues({...values, parent: user._id})
-    // for (var pair of formData.entries()) {
-    //   console.log(pair[0] + ", " + pair[1]);
-    // }
-
-    // setValues({ ...values, error: "" });
-    
-    addDoctorInfo(babyId, values).then((data) => {
+    let doctor = {
+      name: values.name,
+      gender: values.gender,
+      contact1: values.contact1,
+      contact2: values.contact2,
+      address: values.address
+    }
+  
+    addDoctorInfo(babyId, doctor).then((data) => {
       if (data.error) {
         console.log(data.error);
         setValues({ ...values, error: data.error });

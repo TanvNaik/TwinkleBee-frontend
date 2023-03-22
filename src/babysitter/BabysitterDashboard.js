@@ -17,12 +17,12 @@ const BabysitterDashboard = () => {
         <h4 className='card-header ' style={{fontSize: "1.2rem"}}> Babysitter Dashboard </h4>
         <ul className='list-group'>
           <li className='list-group-item'>
-          <Link to={"../../update-profile"} className='nav-link ' style={{color: "#6C70FE"}}>
+          {/* <Link to={"../../update-profile"} className='nav-link ' style={{color: "#6C70FE"}}>
               Update Profile
             </Link>
             <Link to={"../../search"} className='nav-link ' style={{color: "#6C70FE"}}>
               Search Medicines
-            </Link>
+            </Link> */}
             <Link to={"../../feedbacks"} className='nav-link ' style={{color: "#6C70FE"}}>
               Feedbacks
             </Link>

@@ -35,7 +35,7 @@ export default function ViewFeedbacks() {
               <ul className='list-group'>
                 <li className='list-group-item'>
                 {[...Array(feedback.rating)].map((e, i) => {
-                    return <span  style={{color: "yellow", fontSize: "1.3rem"}} key={i} class="star">★</span>
+                    return <span  style={{color: "yellow", fontSize: "1.3rem"}} key={i} classname="star">★</span>
                 })}
                 <br/>
                 {feedback.feedbackText}

@@ -59,7 +59,7 @@ const Signin = () => {
     }
   };
 
-  // edit for babysitter dashboard/ admin dash/ parent dash
+
   const performRedirect = () => {
     if (didRedirect) {
       if (user && user.role === 0) {
@@ -84,20 +84,7 @@ const Signin = () => {
       )
     );
   };
-  const errorMessage = () => {
-    return (
-      <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
-          <div
-            className="alert alert-danger"
-            style={{ display: error ? "" : "none" }}
-          >
-            {error}
-          </div>
-        </div>
-      </div>
-    );
-  };
+ 
   const signInForm = () => {
     return (
       <form>
@@ -138,30 +125,25 @@ const Signin = () => {
         </div>
       </div>
       </form>
-      // <div className="row">
-      //   <div className="col-md-6 offset-sm-3 text-left">
-      //     
-      //       
-      //       
-      //       <br />
-      //       
-      //     </form>
-      //   </div>
-      // </div>
+      
     );
   };
   return (
     <Base title="Sign In page" description="A page for user to sign In!">
       {loadingMessage()}
-      {error && error.map((err) => {
+      {error && error.map((err,key) => {
                 if (err.param == 'general')
-                return( <div className="errorMessage alert-danger">
+                return( <div key={key}className="errorMessage alert-danger">
                 <h2 style={{"fontSize": "1.2rem"}}>{err.msg}</h2>
             </div>)
             })}
-      {errorMessage()}
+   
       {signInForm()}
       {performRedirect()}
+
+      {/* <div >
+        <img src="./undraw_baby_re_fr9r.svg" alt="" />gwrg
+      </div> */}
     </Base>
   );
 };

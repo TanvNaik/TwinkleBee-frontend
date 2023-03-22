@@ -20,6 +20,14 @@ import AddDoctor from "./baby/AddDoctor";
 import BookService from "./parent/BookService";
 import AddAdmin from "./admin/AddAdmin";
 import ViewBaby from "./user/ViewBaby";
+import Profile from "./user/Profile";
+import ViewBookingsParent from "./parent/ViewBookingsParent";
+import Payment from "./parent/Payment";
+import AssignBabysitter from "./admin/AssignBabysitter";
+import Messenger from "./chat/Messenger";
+import WriteFeedback from "./parent/WriteFeedback";
+import Feedback from "./parent/Feedback";
+
 
 export default function Routers() {
   return (
@@ -28,17 +36,27 @@ export default function Routers() {
         <Route path="/" exact element={<Home />} />
         <Route path="/signup" exact element={<Signup />} />
         <Route path="/signin" exact element={<Signin />} />
+        <Route path="/chat/:chatUserId" exact element={<Messenger />} />
+        <Route path="/chat" exact element={<Messenger />} />
+        
+
 
         {/* ADMIN ROUTES */}
         
         <Route path="/admin/dashboard" exact element={<AdminDashBoard />} />
         <Route path="/admin/bookings" exact element={<ManageBookings />} />
         <Route path="/admin/add-admin" exact element={<AddAdmin />} />
+        <Route path="/admin/babysitters" exact element={<ManageBabysitters />} />
+        <Route path="/assign-babysitter/:bookingId" exact element={<AssignBabysitter />} />
+
 
 
 
 
         <Route path="/update-profile" exact element={<UpdateProfile/>} />
+
+
+        <Route path="/profile/:userId" exact element={<Profile/>} />
 
 
         {/* PARENT */}
@@ -47,6 +65,10 @@ export default function Routers() {
         <Route path="/contact-us" exact element={<ContactUs />} />
         <Route path="/feedbacks" exact element={<ViewFeedbacks />} />
         <Route path="/booking" exact element={<BookService />} />
+        <Route path="/bookings/view" exact element={<ViewBookingsParent />} />
+        <Route path="/payment/:bookingId" exact element={<Payment />} />
+        <Route path="/write-feedback" exact element={<WriteFeedback />} />
+        <Route path="/feedback/:bookingId" exact element={<Feedback />} />
 
 
         {/* BABY */}

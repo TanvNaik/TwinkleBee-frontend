@@ -14,26 +14,28 @@ const ParentDashboard = () => {
         <h4 className='card-header ' style={{fontSize: "1.2rem"}}> Parent Dashboard </h4>
         <ul className='list-group'>
           <li className='list-group-item'>
-          <Link to={"../../update-profile"} className='nav-link ' style={{color: "#6C70FE"}}>
+          {/* <Link to={"../../update-profile"} className='nav-link ' style={{color: "#6C70FE"}}>
               Update Profile
-            </Link>
-            <Link to={"../../search"} className='nav-link ' style={{color: "#6C70FE"}}>
-              Search Medicines
-            </Link>
-            <Link to={"../../chat"} className='nav-link ' style={{color: "#6C70FE"}}>
-              Chat
-            </Link>
+            </Link> */}
+            
+            
             <Link to={"../../add-baby"} className='nav-link ' style={{color: "#6C70FE"}}>
               Add a Baby Profile
             </Link>
             <Link to={"../../manage-babies"} className='nav-link ' style={{color: "#6C70FE"}}>
               Manage Babies
             </Link>
+            <Link to={"../../chat"} className='nav-link ' style={{color: "#6C70FE"}}>
+              Chat
+            </Link>
             <Link to={"../../booking"} className='nav-link ' style={{color: "#6C70FE"}}>
               Book a Service
             </Link>
             <Link to={"../../bookings/view"} className='nav-link ' style={{color: "#6C70FE"}}>
               View Bookings
+            </Link>
+            <Link to={"../../write-feedback"} className='nav-link ' style={{color: "#6C70FE"}}>
+              Feedback
             </Link>
           </li>
         </ul>

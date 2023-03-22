@@ -26,10 +26,11 @@ export default function ManageBabies() {
   return (
     <Base title='Babies'>
 
-      <div className="d-flex justify-content-evenly ">
+      <div className="row d-flex ">
         {babies && babies.map((baby,key) => {
           return(
-            <div key={key} className='card mb-4 w-25 '>
+            <div key={key}className="col-4 mb-4  ">
+            <div  className='card mb-4 '>
             <h5 className='card-header'>{baby.name}</h5>
             <ul className='list-group'>
               
@@ -64,22 +65,29 @@ export default function ManageBabies() {
                 {baby.dob && baby.dob.split('-')[2].split('T')[0] + "-" + baby.dob.split('-')[1] + "-" + baby.dob.split('-')[0]}
             
               </li>
-              <li className='list-group-item'>
-              <Link to={"/" + baby._id + "/vaccine"}>
-                <button  className="btn btn-success " style={{width: "100%", borderRadius:"5px"}}>
+              <li className='list-group-item d-flex w-100 justify-content-evenly'>
+              <Link to={"/" + baby._id + "/vaccine"} >
+                <button  className="btn btn-success " style={{ borderRadius:"5px"}}>
                  Add Vaccination Details
+                </button></Link>
+                
+              
+              <Link to={"/" + baby._id + "/doctor"}>
+                <button  className="btn btn-success " style={{ borderRadius:"5px"}}>
+                 Add Doctor Info
                 </button></Link>
                 
               </li>
               <li className='list-group-item'>
-              <Link to={"/" + baby._id + "/doctor"}>
+              <Link to={"/baby/" + baby._id}>
                 <button  className="btn btn-success " style={{width: "100%", borderRadius:"5px"}}>
-                 Add Doctor Info
+                View Profile
                 </button></Link>
                 
               </li>
               
             </ul>
+          </div>
           </div>
           )
           

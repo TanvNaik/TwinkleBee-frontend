@@ -31,32 +31,7 @@ export default function BookService() {
       }
     })
     
-    // if(contact1.length != 10){
-    //   return setValues({...values, error:[
-    //     {
-    //       param: "contact1",
-    //       msg:"Enter valid mobile number"
-    //     }
-    //   ]})
-    // }
-    // setValues({...values, contact: [contact1, contact2]})
-    // console.log(values)
-    // // setValues({...values, parent: user._id})
-    // // for (var pair of formData.entries()) {
-    // //   console.log(pair[0] + ", " + pair[1]);
-    // // }
-
-    // // setValues({ ...values, error: "" });
     
-    // addDoctorInfo(babyId, values).then((data) => {
-    //   if (data.error) {
-    //     console.log(data.error);
-    //     setValues({ ...values, error: data.error });
-    //   } else {
-    //     setValues({ ...values, success: true })
-    //     alert("Successfully added");
-    //   }
-    // });
   };
   
   const handleChange = (name) => (event) => {
@@ -126,7 +101,7 @@ export default function BookService() {
                   {/* Baby */}
                  <div className="form-group">
                  <label  >Baby: </label>&nbsp; &nbsp;
-                 <select onChange={handleChange("babyId")} class="custom-select w-25 text-center  text-dark " style={{border: "1px solid black", borderRadius: "5px"}}name='babyId' >
+                 <select className='custom-select' onChange={handleChange("babyId")} classname="custom-select w-25 text-center  text-dark " style={{border: "1px solid black", borderRadius: "5px"}}name='babyId' >
                   {
                     babies && babies.map((baby, key) => {
                       return (
@@ -136,22 +111,6 @@ export default function BookService() {
                   }
                   
                 </select>
-                       
-                       
-                      <b>
-                        <span className="errorMessage  alert-danger text-danger  ">
-                          {error &&
-                            error.slice(0, 10).map((err) => {
-                              if (err.param === "babyId")
-                                return (
-                                  <>
-                                    {err.msg}
-                                    <br />
-                                  </>
-                                );
-                            })}
-                        </span>{" "}
-                      </b>{" "}
                       <br />
                     </div>
                 </div>

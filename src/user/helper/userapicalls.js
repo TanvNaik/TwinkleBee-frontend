@@ -12,14 +12,10 @@ export const updateUser = (userId, token, userobj) =>{
         body:  JSON.stringify(userobj)
     })
 }
-export const getUser = (findUser, token,userId) =>{
-    return fetch(`${API}/user/${userId}/${findUser}`,{
-        method: "GET",
-        headers: {
-            Accept:"application/json",
-            Authorization: `Bearer ${token}`
-        },
+export const getUser = (findUser) =>{
+    return fetch(`${API}/user/${findUser}`,{
+        method: "GET"
     }).then( response => 
-        console.log(response.json()))
+        response.json())
     .catch( err => console.log(err))
 }

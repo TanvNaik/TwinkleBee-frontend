@@ -1,10 +1,11 @@
+
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { isAuthenticated } from '../auth/helper'
 import Base from '../core/Base'
 import { getUserBookings } from './helper/parentapicalls'
 
-export default function ViewBookingsParent() {
+export default function WriteFeedback() {
   const [bookings, setBookings] = useState([])
   const {user} = isAuthenticated()
   const [values, setValues] = useState({
@@ -140,32 +141,15 @@ export default function ViewBookingsParent() {
                   
               </li>
               <li className='list-group-item'>
-                <span
-                  className='badge bg-warning text-dark
-                   mr-2 '
-                >
-                  Payment Status :
-                </span>
-                &nbsp;
-                {!booking.paymentStatus && (<span>Pending</span>)}
-                {booking.paymentStatus && (<span className='text-success'>Paid</span>)}
-              </li>
-              <li className='list-group-item'>
-              {booking.status === "Approved" && (
-                <Link to={"/payment/" + booking._id}>
-                <button  className="btn btn-success  " style={{ borderRadius:"5px"}}>
-                   Payment
-                  </button>
-                  </Link>
-              )}
-              {booking.status !== "Approved" && (
                 
-                <button  className="btn btn-success  " style={{ borderRadius:"5px"}} disabled>
-                   Payment
+                {!booking.paymentStatus && (<span>Pending</span>)}
+                {booking.paymentStatus && (<Link to={"/feedback/" + booking._id}>
+                <button  className="btn btn-success  " style={{ borderRadius:"5px"}}>
+                   Feedback
                   </button>
-                  
-              )}
+                  </Link>)}
               </li>
+              
 
               
             </ul>

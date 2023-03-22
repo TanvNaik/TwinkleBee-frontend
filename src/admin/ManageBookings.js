@@ -19,7 +19,6 @@ const ManageBookings = () => {
       if (data.error) {
         console.log(data.error);
       } else {
-        console.log(data)
         setBookings(data.bookings);
       }
     });
@@ -173,8 +172,35 @@ const ManageBookings = () => {
               </button>
               
             </li>
-              )}
+              )} {
+                (booking.status === "Approved" && !booking.babysitterAssigned)
+                &&
+                (<li className='list-group-item text-center'>
               
+              <Link to={"/assign-babysitter/" + booking._id}>
+              <button  className="btn btn-success " style={{width: "100%", borderRadius:"5px"}}>
+                 Assign Babysitter
+                </button>
+                </Link>
+                
+                
+              </li>)
+              }
+              {
+                (booking.status === "Approved" && booking.babysitterAssigned) && (
+                  <li className='list-group-item'>
+                <span
+                  className='badge bg-warning text-dark
+                   mr-2 '
+                >
+                  Babysitter
+                </span>
+                &nbsp;
+                {booking.babysitter.name}
+              </li>
+                )
+
+              }
               <li className='list-group-item'>
               <Link to={"/baby/" + booking.babyId._id}>
               <button  className="btn btn-success " style={{width: "100%", borderRadius:"5px"}}>

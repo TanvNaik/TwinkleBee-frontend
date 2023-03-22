@@ -56,3 +56,42 @@ export const addBooking = (userId, booking) => {
     }).then(response => response.json())
   .catch(err => console.log(err))
 }
+
+export const getUserBookings =(userId) => {
+  return fetch(`${API}/${userId}/getbookings`,{
+    method: "GET"
+  }
+ ).then(response => response.json())
+ .catch(err => console.log(err))
+}
+export const getBookingById = (bookingId) => {
+  return fetch(`${API}/booking/${bookingId}`,{
+    method: "GET"
+  }).then(response => response.json())
+  .catch(err => console.log(err))
+}
+export const createInvoice = (body, userId, bookingId, token) => {
+  return fetch(`${API}/create/invoice/${bookingId}/${userId}`, {
+    credentials: 'include',
+    method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        
+    },
+ 
+    body: JSON.stringify(body)
+
+}).then( response => response.json())
+.catch(err => console.log(err))
+}
+export const writeFeedback = (feedbackReceiver, feedbacker, feedback) => {
+  return fetch(`${API}/writeFeedback/${feedbacker}/${feedbackReceiver}`,{
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(feedback)
+    }).then(response => response.json())
+  .catch(err => console.log(err))
+}

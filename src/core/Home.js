@@ -28,10 +28,10 @@ const Home = () => {
         <div className="w-100 m-0 justify-content-center align-items-center">
           <div className="d-flex  w-100 justify-content-evenly align-items-center">
             <Link to={"/signin"} className="w-25">
-              <button className="btn-info  p-3 w-100">Sign In</button>
+              <button className="btn-success   p-3 w-100">Sign In</button>
             </Link>
             <Link to={"/signup"} className="w-25">
-              <button className="btn-info  p-3 w-100">Signup</button>
+              <button className="btn-success  p-3 w-100">Signup</button>
             </Link>
             
           </div>
