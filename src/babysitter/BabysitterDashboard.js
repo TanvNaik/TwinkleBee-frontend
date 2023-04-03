@@ -8,7 +8,7 @@ import Base from "../core/Base";
 
 const BabysitterDashboard = () => {
   const {
-    user: { name, email, profile_pic, adhaarNumber, contactNumber,  role }
+    user: { _id, name, email, profile_pic, adhaarNumber, contactNumber,  role }
   } = isAuthenticated();
 
   const babysitterLeftSide = () => {
@@ -23,11 +23,14 @@ const BabysitterDashboard = () => {
             <Link to={"../../search"} className='nav-link ' style={{color: "#6C70FE"}}>
               Search Medicines
             </Link> */}
-            <Link to={"../../feedbacks"} className='nav-link ' style={{color: "#6C70FE"}}>
+            <Link to={"../../feedbacks/" + _id  } className='nav-link ' style={{color: "#6C70FE"}}>
               Feedbacks
             </Link>
             <Link to={"../../chat"} className='nav-link ' style={{color: "#6C70FE"}}>
               Chat
+            </Link>
+            <Link to={"../../assigned-bookings/" + _id} className='nav-link ' style={{color: "#6C70FE"}}>
+              Assigned Bookings
             </Link>
           </li>
         </ul>

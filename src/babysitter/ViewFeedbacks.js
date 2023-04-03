@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import { isAuthenticated } from '../auth/helper'
 import Base from '../core/Base'
 import { getFeedbacks } from './helper/babysitterapicalls';
@@ -6,12 +7,12 @@ import { getFeedbacks } from './helper/babysitterapicalls';
 export default function ViewFeedbacks() {
 
     const [error, setError] = useState("")
-    const {user, token} = isAuthenticated();
+    // const {user, token} = isAuthenticated();
     const [feedbacks, setFeedbacks] = useState([]);
-
+    const {babysitterId} = useParams()
     
     useEffect(()=>{
-        getFeedbacks(user._id)
+        getFeedbacks(babysitterId)
         .then(data => {
             if(data.error){
               setError(data.error)

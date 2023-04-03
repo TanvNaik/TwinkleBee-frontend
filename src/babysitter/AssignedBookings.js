@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { isAuthenticated } from '../auth/helper'
-import Base from '../core/Base'
-import { getUserBookings } from './helper/parentapicalls'
+import { Link } from 'react-router-dom';
+import { isAuthenticated } from '../auth/helper';
+import Base from "../core/Base";
+import { getAssignedBookings } from './helper/babysitterapicalls';
 
-export default function ViewBookingsParent() {
+export default function AssignedBookings() {
   const [bookings, setBookings] = useState([])
   const {user} = isAuthenticated()
   const [values, setValues] = useState({
@@ -14,13 +14,14 @@ export default function ViewBookingsParent() {
   const {error, success} = values
   const preload = () => {
     setValues({...values, success: "", error: ""})
-    getUserBookings(user._id).then((data) => {
+    getAssignedBookings(user._id).then((data) => {
       if (data.error) {
-        setValues({...values, error: data.error})
         console.log(data.error);
+        setValues({...values, error: data.error})
       } else {
+        console.log(data.bookings)
         setBookings(data.bookings);
-        console.log(bookings)
+        
       }
     });
     
@@ -50,7 +51,7 @@ export default function ViewBookingsParent() {
     preload();
   }, []);
   return (
-    <Base title='All Your Bookings'>
+    <Base title='Assigned Bookings'>
       {errorMessage()}
 
       <div className="row d-flex">
@@ -112,34 +113,7 @@ export default function ViewBookingsParent() {
                 {booking.status === "Rejected" && (<span className='text-danger'>Rejected</span>)}
                 {booking.status !== "Rejected" && (<span >{booking.status}</span>)}
               </li>
-              <li className='list-group-item'>
-                <div className="d-flex justify-content-between">
-                  <div>
-                  <span
-                  className='badge bg-warning text-dark
-                   mr-2 '
-                > Babysitter : 
-                </span>
-                &nbsp;
-                {
-                    booking.babysitterAssigned && (<span>{booking.babysitter.name}</span>)
-                  }{
-                    !booking.babysitterAssigned && (<span>Not Assigned</span>)
-                  }
-                  </div>
-                  {
-                    booking.babysitterAssigned && <div>
-                    
-                    <Link to={"/profile/" + booking.babysitter._id}>
-                  <button  className="btn btn-success " style={{ borderRadius:"5px"}}>
-                   Visit profile
-                  </button></Link>
-                    </div>
-                  }
-                  
-                </div>
-                  
-              </li>
+              
               <li className='list-group-item'>
                 <span
                   className='badge bg-warning text-dark
@@ -151,23 +125,13 @@ export default function ViewBookingsParent() {
                 {!booking.paymentStatus && (<span>Pending</span>)}
                 {booking.paymentStatus && (<span className='text-success'>Paid</span>)}
               </li>
+              
               <li className='list-group-item'>
-              {(booking.status === "Approved" &&  !booking.paymentStatus) && (
-                <Link to={"/payment/" + booking._id}>
-                <button  className="btn btn-success  " style={{ borderRadius:"5px"}}>
-                   Payment
-                  </button>
-                  </Link>
-              )}
-              {booking.status !== "Approved" && (
-                
-                <button  className="btn btn-success  " style={{ borderRadius:"5px"}} disabled>
-                   Payment
-                  </button>
-                  
-              )}
+              <Link to={"/baby/" + booking.babyId._id}>
+                  <button  className="btn btn-success " style={{ borderRadius:"5px"}}>
+                   View Baby profile
+                  </button></Link>
               </li>
-
               
             </ul>
           </div>

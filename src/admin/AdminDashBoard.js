@@ -25,9 +25,9 @@ const AdminDashBoard = () => {
             <Link to='/admin/payments' className='nav-link text-success'>
               Check Payments
             </Link>
-            <Link to='/admin/add-admin' className='nav-link text-success'>
+            {/* <Link to='/admin/add-admin' className='nav-link text-success'>
               Add Admin
-            </Link>
+            </Link> */}
 
 
           </li>

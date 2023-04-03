@@ -131,7 +131,8 @@ const Signin = () => {
   return (
     <Base title="Sign In page" description="A page for user to sign In!">
       {loadingMessage()}
-      {error && error.map((err,key) => {
+      {console.log(error)}
+      {error && typeof error === Array && error.map((err,key) => {
                 if (err.param == 'general')
                 return( <div key={key}className="errorMessage alert-danger">
                 <h2 style={{"fontSize": "1.2rem"}}>{err.msg}</h2>

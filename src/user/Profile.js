@@ -76,6 +76,17 @@ const Profile = () => {
                 </button>
                 </Link>
           </li>
+          {
+            (viewUser.role === 1  && (
+              <li className='list-group-item '>
+          <Link to={"/feedbacks/" + viewUser._id}>
+              <button  className="btn btn-success w-25  " style={{ borderRadius:"5px"}}>
+                 View Feedbacks
+                </button>
+                </Link>
+          </li>
+            ))
+          }
         </ul>
       </div>
     );

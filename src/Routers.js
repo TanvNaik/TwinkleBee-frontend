@@ -27,6 +27,8 @@ import AssignBabysitter from "./admin/AssignBabysitter";
 import Messenger from "./chat/Messenger";
 import WriteFeedback from "./parent/WriteFeedback";
 import Feedback from "./parent/Feedback";
+import AssignedBookings from "./babysitter/AssignedBookings";
+import CheckPayments from "./admin/CheckPayments";
 
 
 export default function Routers() {
@@ -48,6 +50,7 @@ export default function Routers() {
         <Route path="/admin/add-admin" exact element={<AddAdmin />} />
         <Route path="/admin/babysitters" exact element={<ManageBabysitters />} />
         <Route path="/assign-babysitter/:bookingId" exact element={<AssignBabysitter />} />
+        <Route path="/admin/payments" exact element={<CheckPayments />} />
 
 
 
@@ -63,7 +66,7 @@ export default function Routers() {
         <Route path="/add-baby" exact element={<AddBaby />} />
         <Route path="/manage-babies" exact element={<ManageBabies />} />
         <Route path="/contact-us" exact element={<ContactUs />} />
-        <Route path="/feedbacks" exact element={<ViewFeedbacks />} />
+        <Route path="/feedbacks/:babysitterId" exact element={<ViewFeedbacks />} />
         <Route path="/booking" exact element={<BookService />} />
         <Route path="/bookings/view" exact element={<ViewBookingsParent />} />
         <Route path="/payment/:bookingId" exact element={<Payment />} />
@@ -83,6 +86,12 @@ export default function Routers() {
           exact
           element={<BabysitterDashboard />}
         />
+        <Route
+          path="/assigned-bookings/:babysitterId"
+          exact
+          element={<AssignedBookings />}
+        />
+      
         {/* PRIVATE ROUTES */}
         <Route element={<PrivateRoute />}>
           {/* <Route path="/choose-role" exact element={<ChooseRole/>} />

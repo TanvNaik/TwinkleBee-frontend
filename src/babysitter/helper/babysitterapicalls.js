@@ -7,3 +7,10 @@ export const getFeedbacks = (userId) =>{
     }).then( response =>  response.json())
     .catch( err => console.log(err))
 }
+export const getAssignedBookings =(userId) => {
+    return fetch(`${API}/${userId}/get-assigned-bookings`,{
+      method: "GET"
+    }
+   ).then(response => response.json())
+   .catch(err => console.log(err))
+  }

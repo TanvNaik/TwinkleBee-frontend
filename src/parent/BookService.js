@@ -15,6 +15,7 @@ export default function BookService() {
   })
   const [babies, setBabies] = useState([])
   const {babyId, fees, duration, hoursperday,error,success} = values
+  
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -44,6 +45,7 @@ export default function BookService() {
         setValues({...values, error: data.error})
       }else{
         setBabies(data.babies)
+        console.log(data.babies)
       }
     })
   },[])
@@ -104,8 +106,9 @@ export default function BookService() {
                  <select className='custom-select' onChange={handleChange("babyId")} classname="custom-select w-25 text-center  text-dark " style={{border: "1px solid black", borderRadius: "5px"}}name='babyId' >
                   {
                     babies && babies.map((baby, key) => {
+                      
                       return (
-                        <option key={key} value={baby._id}>{baby.name}</option>
+                        <option key={key} selected value={baby._id}>{baby.name}</option>
                       )
                     })
                   }

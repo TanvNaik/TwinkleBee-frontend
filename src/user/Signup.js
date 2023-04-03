@@ -181,6 +181,14 @@ const Signup = () => {
                       type="text"
                       value={adhaarNumber}
                     />
+                    <b>
+                        <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
+                        {error &&
+                                  error.map((err) => {
+                                    if (err.param === "adhaarNumber") return err.msg;
+                                  })}
+                        </span>{" "}
+                      </b>{" "}
                   </div>
                     
               </div>
@@ -395,7 +403,14 @@ const Signup = () => {
                       onChange={handleChange("adhaarNumber")}
                       type="text"
                       value={adhaarNumber}
-                    />
+                    /><b>
+                    <span className="errorMessage  alert-danger text-danger  alert-danger text-danger">
+                      {error &&
+                        error.map((err) => {
+                          if (err.param === "adhaarNumber") return err.msg;
+                        })}
+                    </span>{" "}
+                  </b><br/>
                   </div>
                     
               </div>
