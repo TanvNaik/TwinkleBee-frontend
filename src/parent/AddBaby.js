@@ -35,7 +35,6 @@ export default function AddBaby() {
       };
       const onSubmit = (event) => {
         event.preventDefault();
-        console.log(values)
         setValues({...values, parent: user._id})
         for (var pair of formData.entries()) {
           console.log(pair[0] + ", " + pair[1]);
@@ -73,7 +72,7 @@ export default function AddBaby() {
     const addBabyForm = () => {
         return (
             <form>
-             <div className="d-flex justify-content-evenly w-100 mt-4"  >
+             <div className="d-flex  text-start justify-content-evenly w-100 mt-4"  >
                <div className="w-25" >
                  <div className=" text-left">
                  <div className="form-group">

@@ -19,3 +19,5 @@ export const getUser = (findUser) =>{
         response.json())
     .catch( err => console.log(err))
 }
+
+

@@ -49,7 +49,7 @@ export default function CheckPayments() {
     <Base title='All Payments'>
       {errorMessage()}
 
-      <div className="row d-flex">
+      <div className="row d-flex text-start">
       {invoices && invoices.map((invoice,key) => {
         console.log(invoice)
           return(

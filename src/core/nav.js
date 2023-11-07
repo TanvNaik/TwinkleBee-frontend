@@ -8,13 +8,19 @@ const Nav = ({  history }) =>{
   const currentTab = (path) => {
     
     if (location ? location.pathname === path : false) {
-      return { color: "#6C63FF" };
+      return { color: "#99005C" };
     } else {
       return { color: "#000000" };
     }
   };
   return (
-    <div>
+    <div className="d-flex justify-content-between">
+      <div className="">
+      <h3 className="pl-2 main-title"><b>
+        TwinkleBee</b></h3>
+
+      </div>
+      <div>
       <ul className='nav nav-tabs justify-content-end ' style={{fontSize:" 1rem"}}>
         <li className='nav-item'>
           <Link style={currentTab("/")} className='nav-link ' to='/'>
@@ -22,6 +28,17 @@ const Nav = ({  history }) =>{
           </Link>
         </li>
         
+        {isAuthenticated()  && (
+          <li className='nav-item'>
+            <Link
+              style={currentTab("/user/dashboard")}
+              className='nav-link '
+              to='/view-posts'
+            >
+              Feed
+            </Link>
+          </li>
+        )}
         {isAuthenticated() && isAuthenticated().user.role === 0  && (
           <li className='nav-item'>
             <Link
@@ -115,6 +132,8 @@ const Nav = ({  history }) =>{
           </li>
         )}
       </ul>
+      </div>
+      
     </div>
   );
 } 

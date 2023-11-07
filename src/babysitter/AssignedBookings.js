@@ -54,7 +54,7 @@ export default function AssignedBookings() {
     <Base title='Assigned Bookings'>
       {errorMessage()}
 
-      <div className="row d-flex">
+      <div className="row d-flex text-start">
       {bookings && bookings.map((booking,key) => {
         console.log(booking)
           return(

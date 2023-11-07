@@ -10,7 +10,7 @@ const ParentDashboard = () => {
 
   const parentLeftSide = () => {
     return (
-      <div className='card w-100 h-100'>
+      <div className='card w-100 h-100 text-start'>
         <h4 className='card-header ' style={{fontSize: "1.2rem"}}> Parent Dashboard </h4>
         <ul className='list-group'>
           <li className='list-group-item'>
@@ -44,7 +44,7 @@ const ParentDashboard = () => {
   };
   const parentRightSide = () => {
     return (
-      <div className='card mb-4 w-100 h-100'>
+      <div className='card mb-4 text-start w-100 h-100'>
         <h4 className='card-header'>Profile</h4>
         <ul className='list-group'>
           <li className='list-group-item'>

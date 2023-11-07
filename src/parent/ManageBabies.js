@@ -26,7 +26,7 @@ export default function ManageBabies() {
   return (
     <Base title='Babies'>
 
-      <div className="row d-flex ">
+      <div className="row d-flex text-start ">
         {babies && babies.map((baby,key) => {
           return(
             <div key={key}className="col-4 mb-4  ">

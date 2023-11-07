@@ -92,7 +92,7 @@ export default function Payment() {
     className='container  p-4 mb-2 mt-4'
     >
       {booking &&  (
-        <div className='row d-flex  justify-content-center'>
+        <div className='row d-flex  justify-content-center text-start'>
         <div className='col-6 d-flex justify-content-center align-items-center'>{showSummary()}</div>
        
       </div>

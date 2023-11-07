@@ -14,3 +14,4 @@ export const getAssignedBookings =(userId) => {
    ).then(response => response.json())
    .catch(err => console.log(err))
   }
+

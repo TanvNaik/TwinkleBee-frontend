@@ -52,7 +52,7 @@ export default function Feedback() {
         }
         const showSummary = () => {
             return (
-              <div className='card mb-4 w-100 h-100'>
+              <div className='card mb-4 w-100 h-100 text-start'>
                 <h4 className='card-header'>Summary</h4>
                 <ul className='list-group'>
                   <li className='list-group-item'>

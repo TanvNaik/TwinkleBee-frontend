@@ -111,7 +111,7 @@ const Profile = () => {
   }
   return (
     <Base title='Profile' className='container bg-success p-4 mb-2'>
-      <div className='row '>
+      <div className='row text-start '>
       <div className='col-9  '>{profileRightSide()}</div>
         <div className="col-3 d-flex justify-content-center align-items-center">{ProfilePicside()}</div>
       </div>

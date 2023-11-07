@@ -33,7 +33,7 @@ export default function ViewBaby() {
   const showVaccinations = () => {
     return (
       <div className="">
-        <ul className="list-group pb-2">
+        <ul className="list-group  pb-2">
         {baby.vaccination && baby.vaccination.map((vaccine,key) => {
           return(
             <li className="list-group-item">
@@ -84,7 +84,7 @@ export default function ViewBaby() {
   }
   const babysection1 = () => {
     return (
-        <div className='card mb-4  '>
+        <div className='card mb-4  text-start '>
         <h4 className='card-header'>Baby Information</h4>
         <ul className='list-group'>
           <li className='list-group-item'>
@@ -221,12 +221,12 @@ export default function ViewBaby() {
     return (
       <div className=' d-flex w-100 justify-content-evenly align-items-center pb-2'>
         <div className='w-25'>
-        <button  onClick={changeSection} id="vaccination"className="btn btn-success w-100 "style={{ borderRadius:"5px", marginRight: "1rem", background: "purple"}}>
+        <button  onClick={changeSection} id="vaccination"className="btn btn-success w-100 "style={{ borderRadius:"5px", marginRight: "1rem", background: "#F0B1BA"}}>
                Vaccinations
               </button>
         </div>
         <div className='w-25'>
-        <button onClick={changeSection} id="doctor" className="btn btn-success w-100 "  style={{ borderRadius:"5px", marginLeft: "1rem" , background: "purple"}}>
+        <button onClick={changeSection} id="doctor" className="btn btn-success w-100 "  style={{ borderRadius:"5px", marginLeft: "1rem" , background: "#F0B1BA"}}>
                Doctor's Contact Info
               </button>
         </div>

@@ -98,7 +98,7 @@ const ManageBabysitters = () => {
     <Base title='Manage Babysitters here' >
       {successMessage()}
       {errorMessage()}
-      <div className="row d-flex">
+      <div className="row d-flex text-start">
       
         {babysitters && babysitters.map((babysitter,key) => {
           return(

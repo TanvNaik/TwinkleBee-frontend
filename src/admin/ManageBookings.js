@@ -92,10 +92,10 @@ const ManageBookings = () => {
     <Base title='Manage bookings here'>
       {successMessage()}
       {errorMessage()}
-      <div className="d-flex justify-content-evenly ">
+      <div className="row  text-start">
         {bookings && bookings.map((booking,key) => {
           return(
-            <div key={key} className='card mb-4 w-25 ' >
+            <div key={key} className=' col-3 card mb-4 w-25 ' >
             
             <ul className='list-group' >
             <li className='list-group-item'>

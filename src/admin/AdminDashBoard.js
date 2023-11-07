@@ -10,8 +10,8 @@ const AdminDashBoard = () => {
 
   const adminLeftSide = () => {
     return (
-      <div className='card'>
-        <h4 className='card-header ' style={{fontSize: "1.2rem"}}> Admin Navigation </h4>
+      <div className='card text-start'>
+        <h4 className='card-header text-start ' style={{fontSize: "1.2rem"}}> Admin Navigation </h4>
         <ul className='list-group'>
           <li className='list-group-item'>
             <Link to='/admin/babysitters' className='nav-link text-success'>
@@ -37,7 +37,7 @@ const AdminDashBoard = () => {
   };
   const adminRightSide = () => {
     return (
-      <div className='card mb-4'>
+      <div className='card text-start mb-4'>
         <h4 className='card-header'>Admin Information</h4>
         <ul className='list-group'>
           <li className='list-group-item'>

@@ -29,6 +29,9 @@ import WriteFeedback from "./parent/WriteFeedback";
 import Feedback from "./parent/Feedback";
 import AssignedBookings from "./babysitter/AssignedBookings";
 import CheckPayments from "./admin/CheckPayments";
+import AddPost from "./post/AddPost";
+import ViewPosts from "./post/ViewPosts";
+
 
 
 export default function Routers() {
@@ -40,6 +43,7 @@ export default function Routers() {
         <Route path="/signin" exact element={<Signin />} />
         <Route path="/chat/:chatUserId" exact element={<Messenger />} />
         <Route path="/chat" exact element={<Messenger />} />
+        <Route path="/view-posts" exact element={<ViewPosts />} />
         
 
 
@@ -80,11 +84,24 @@ export default function Routers() {
         <Route path="/baby/:babyId" exact element={<ViewBaby />} />
 
 
+
         <Route path="/parent/dashboard" exact element={<ParentDashboard />} />
+
+        {/* Babysitter */}
         <Route
           path="/babysitter/dashboard"
           exact
           element={<BabysitterDashboard />}
+        />
+        <Route
+          path="/babysitter/dashboard"
+          exact
+          element={<BabysitterDashboard />}
+        />
+        <Route
+          path="/add-post/:babysitterId"
+          exact
+          element={<AddPost/>}
         />
         <Route
           path="/assigned-bookings/:babysitterId"

@@ -32,6 +32,9 @@ const BabysitterDashboard = () => {
             <Link to={"../../assigned-bookings/" + _id} className='nav-link ' style={{color: "#6C70FE"}}>
               Assigned Bookings
             </Link>
+            <Link to={"../../add-post/" + _id} className='nav-link ' style={{color: "#6C70FE"}}>
+              Add Post 
+            </Link>
           </li>
         </ul>
       </div>
@@ -115,7 +118,7 @@ const BabysitterDashboard = () => {
       title='Welcome to Dashboard '
       className='container bg-success p-4 mb-2'
     >
-      <div className='row '>
+      <div className='row text-start '>
         <div className='col-3 d-flex justify-content-center align-items-center'>{babysitterLeftSide()}</div>
         <div className='col-6  '>{babysitterRightSide()}</div>
         <div className="col-3 d-flex justify-content-center align-items-center">{babysitterProfilePic()}</div>

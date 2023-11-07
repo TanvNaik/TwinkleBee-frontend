@@ -87,9 +87,11 @@ const Signin = () => {
  
   const signInForm = () => {
     return (
+      <div className="my-auto max-w-3xl w-full blub relative ml-0 w-50 "
+          >
       <form>
-      <div className="d-flex justify-content-center  mt-4">
-        <div className="w-25">
+      
+        <div className="w-100">
         <div className="form-group">
                <label >Email or Username: </label>
                <input
@@ -123,23 +125,59 @@ const Signin = () => {
             
             </div>
         </div>
-      </div>
+      
       </form>
+      </div>
       
     );
   };
   return (
     <Base title="Sign In page" description="A page for user to sign In!">
       {loadingMessage()}
-      {console.log(error)}
       {error && typeof error === Array && error.map((err,key) => {
                 if (err.param == 'general')
                 return( <div key={key}className="errorMessage alert-danger">
                 <h2 style={{"fontSize": "1.2rem"}}>{err.msg}</h2>
             </div>)
             })}
+
+      <div className=" d-flex w-100   justify-content-between  section1">
+      <div
+          id="carouselExampleSlidesOnly"
+          className="carousel slide w-50 "
+          data-bs-ride="carousel"
+          style={{ maxWidth: "70%", widt: "40%", marginRight:"5%" }}
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img
+                src="./images/img1.jpg"
+                className="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="./images/img2.jpg"
+                className="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="./images/img3.jpg"
+                className="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+        </div>
+        {signInForm()}
+        
+      </div>
+      
    
-      {signInForm()}
+    
       {performRedirect()}
 
       {/* <div >

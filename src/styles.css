@@ -8,30 +8,59 @@
 }
 body,
 .bg-dark {
+  background: #f0b1ba6e !important; 
+  background-color: #FFEEF8!important;
+
+
   /* background: #f7dffa !important; */
-  background: #dfd9e0  !important;
+  /* background: #dfd9e0  !important;
   background: rgb(223,217,224);
-background: radial-gradient(circle, rgba(223,217,224,1) 4%, rgba(108,112,254,0.5887605042016807) 100%)!important;
+background: radial-gradient(circle, rgba(223,217,224,1) 4%, rgba(108,112,254,0.5887605042016807) 100%)!important; */
   /* font-family: 'Poppins', sans-serif; */
   /* font-family: 'Aleo', serif; */
   font-family: 'Roboto', sans-serif;
   
 }
+/* #FFEEF8 */
+.main-title{
+  color: #99005C;
+  font-family: 'Edu SA Beginner', cursive;
+}
+.title{
+  color: #99005C;
+}
+.title h3{
+  font-weight: 800;
+  font-size: 2rem;
+}
+.section1{
+  /* background: #F0B1BA !important;  */
+  background-color: #f7eff4!important;
 
+}
+.section2{
+  background-color: #FFEEF8!important;
+}
+.nav{
+  /* --bs-bg-opacity: 0.1; */
+  /* background: #f0b1babd !important;  */
+
+
+}
 .nav-item{
   cursor: pointer;
 }
 .bg-success{
-  background-color: #6C70FE !important;
+  background-color: #99005C !important;
 }
 .btn-success{
-  background-color: #6C70FE;
+  background-color: #99005C;
   border: none;
 }
 .btn-success:hover{
   background-color: #ffffff;
-  color: #6C70FE;
-  border: #6C70FE 2px solid;
+  color: #99005C;
+  border: #99005C 2px solid;
 }
 .form-group{
   font-size: 0.8rem;

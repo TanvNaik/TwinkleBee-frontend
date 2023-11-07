@@ -72,6 +72,7 @@ export default function BookService() {
         msg: "Please mention Hours per day"
       }]})
     }
+    // 50 rs per hour
     if(duration === ""){
       return setValues({...values, error: [{
         param: "duration",
@@ -97,10 +98,10 @@ export default function BookService() {
   const bookingForm = () => {
     return (
       <form>
-             <div className="d-flex justify-content-evenly align-items-center w-100 mt-4"  >
+             <div className="d-flex justify-content-evenly align-items-center text-start w-100 mt-4"  >
                <div className="w-50" >
                  <div className=" text-left">
-                  {/* Baby */}
+                  {/* Baby */} 
                  <div className="form-group">
                  <label  >Baby: </label>&nbsp; &nbsp;
                  <select className='custom-select' onChange={handleChange("babyId")} classname="custom-select w-25 text-center  text-dark " style={{border: "1px solid black", borderRadius: "5px"}}name='babyId' >

@@ -75,7 +75,7 @@ const Signup = () => {
       <div>
         {section === "parent" && (
           <form>
-            <div className="d-flex justify-content-evenly w-100 mt-4"  >
+            <div className="d-flex justify-content-evenly text-start w-100 mt-4"  >
               <div className="w-25" >
                 <div className=" text-left">
                 <div className="form-group">
@@ -298,7 +298,7 @@ const Signup = () => {
         )}
         {section === "babysitter" && (
           <form>
-            <div className="d-flex justify-content-evenly w-100 mt-4 ">
+            <div className="d-flex justify-content-evenly text-start w-100 mt-4 ">
               <div className="w-25">
                 <div className=" text-left">
                 <div className="form-group">

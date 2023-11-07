@@ -53,18 +53,18 @@ export default function WriteFeedback() {
     <Base title='All Your Bookings'>
       {errorMessage()}
 
-      <div className="row d-flex">
+      <div className="row d-flex text-start">
       {bookings && bookings.map((booking,key) => {
         console.log(booking)
           return(
             <div key={key}  className="col-4 mb-4  ">
-            <div className='card mb-4  'style={{border: "2px solid rgb(153 152 152)"}} >
+            <div className='card mb-4 text-start  'style={{border: "2px solid rgb(153 152 152)"}} >
              
             <ul className='list-group' >
-            <li className='list-group-item'>
+            <li className='list-group-item text-start'>
                 <span
                   className='badge bg-warning text-dark
-                   mr-2 '
+                   mr-2  tex'
                 >
                   Baby:
                 </span>
