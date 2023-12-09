@@ -74,6 +74,18 @@ background: radial-gradient(circle, rgba(223,217,224,1) 4%, rgba(108,112,254,0.5
 .text-danger{
   font-weight: 600;
 }
+.footer-anchors a {
+  color: #99005C;
+  text-decoration: none;
+}
+.footer-anchors hr{
+display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid #99005C;
+  margin: 1em 0;
+  padding: 0;
+}
 /* footer {
   position: relative;
   bottom: 0;

@@ -20,7 +20,7 @@ const Signup = () => {
     success: false,
     formData: new FormData(),
   });
-  const [section, setSection] = useState("");
+  const [section, setSection] = useState("parent");
   const {
     name,
     username,

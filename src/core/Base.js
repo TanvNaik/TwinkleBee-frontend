@@ -81,10 +81,125 @@ const Base = ({
           </div>
         </div>
       </section>
-        <footer>
-        <div className="container align-items-center w-100">
+        <footer >
+        <div className="container align-items-center w-100 footer-anchors">
           
-          <ul className="d-flex d-flex-row justify-content-center w-100 nav nav-tabs mt-4 mb-4">
+          
+
+          <hr/>
+
+          <div className="row between-md lg-vertical-spacing ">
+            <div className="col-xs-12 col-md-5 centered md-vertical-spacing">
+              <h3 className="h5 xs-vertical-spacing">Resources</h3>
+              <ul className="list-unstyled ">
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Affiliates
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Trust &amp; Safety Center
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a
+                    className="link--secondary"
+                    href="https://support.sittercity.com/hc/en-us/articles/360018694973-Sittercity-Community-Inclusion-Policy"
+                  >
+                    Community Inclusion Policy
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Resources for Parents
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="/sitters">
+                    Resources for Sitters
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="col-xs-12 col-md-5 centered md-vertical-spacing">
+              <h3 className="h5 xs-vertical-spacing">
+                Find Child, Pet, & Senior Care
+              </h3>
+              <ul className="list-unstyled ">
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Babysitters
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Nannies
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Child Care
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Special Needs Care
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Senior Care
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Pet Care
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="col-xs-12 col-md-2 centered md-vertical-spacing">
+              <h3 className="h5 xs-vertical-spacing">Find Jobs</h3>
+              <ul className="list-unstyled ">
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Babysitting Jobs
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Nannying Jobs
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Child Care Jobs
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Special Needs Care Jobs
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Senior Care Jobs
+                  </a>
+                </li>
+                <li className="xs-vertical-spacing">
+                  <a className="link--secondary" href="#">
+                    Pet Sitting Jobs
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr/>
+
+          <ul className="d-flex d-flex-row justify-content-center w-100 nav  mt-4 mb-4">
             <li className="mx-2">
               <a
                 rel="noopener"
@@ -154,143 +269,32 @@ const Base = ({
                 </svg>
               </a>{" "}
             </li>
+
           </ul>
 
-          
-
-          <div className="row between-md lg-vertical-spacing">
-            <div className="col-xs-12 col-md-4 centered md-vertical-spacing">
-              <h3 className="h5 xs-vertical-spacing">Resources</h3>
-              <ul className="list-unstyled ">
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/affiliate-program">
-                    Affiliates
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/trust-and-safety">
-                    Trust &amp; Safety Center
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a
-                    className="link--secondary"
-                    href="https://support.sittercity.com/hc/en-us/articles/360018694973-Sittercity-Community-Inclusion-Policy"
-                  >
-                    Community Inclusion Policy
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/parents">
-                    Resources for Parents
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/sitters">
-                    Resources for Sitters
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="col-xs-12 col-md-4 centered md-vertical-spacing">
-              <h3 className="h5 xs-vertical-spacing">
-                Find Child, Pet, & Senior Care
-              </h3>
-              <ul className="list-unstyled ">
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/babysitters">
-                    Babysitters
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/nanny">
-                    Nannies
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/child-care">
-                    Child Care
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/special-needs">
-                    Special Needs Care
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/companion-care">
-                    Senior Care
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/pet-sitting">
-                    Pet Care
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="col-xs-12 col-md-4 centered md-vertical-spacing">
-              <h3 className="h5 xs-vertical-spacing">Find Jobs</h3>
-              <ul className="list-unstyled ">
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/babysitting-jobs">
-                    Babysitting Jobs
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/nanny-jobs">
-                    Nannying Jobs
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/child-care-jobs">
-                    Child Care Jobs
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/special-needs-jobs">
-                    Special Needs Care Jobs
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/companion-care-jobs">
-                    Senior Care Jobs
-                  </a>
-                </li>
-                <li className="xs-vertical-spacing">
-                  <a className="link--secondary" href="/pet-sitting-jobs">
-                    Pet Sitting Jobs
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
           <div className="md-vertical-spacing">
-            <p className="copyright pb-4 sm:pb-1">
+            <p className="copyright  sm:pb-1">
               © 2023 TwinkleBee Incorporated. All Rights Reserved.
             </p>
-            <p className="copyright pb-4 sm:pb-1">
+            <p className="copyright  sm:pb-1">
               By using this site you agree to the{" "}
               <a
                 className="link-primary underline whitespace-nowrap"
-                href="/terms"
+                href="#"
               >
                 Terms of Use
               </a>
               . See our{" "}
               <a
                 className="link-primary underline whitespace-nowrap"
-                href="https://www.sittercity.com/privacy"
+                href="#"
               >
                 Privacy Policy
               </a>
               . Make updates to{" "}
               <a
                 className="link-primary underline whitespace-nowrap"
-                href="https://www.twinklebee.com/do-not-sell-my-personal-information"
+                href="#"
               >
                 Do Not Sell My Personal Information
               </a>
@@ -300,7 +304,7 @@ const Base = ({
               If you are having difficulty using assistive technology with this
               website, please contact twinklebee Member Services
               <br /> by{" "}
-              <a href="tel:+1-888-748-2489" className="link--copy">
+              <a href="#" className="link--copy">
                 phone at 888.748.2489
               </a>{" "}
               or by email at{" "}

@@ -42,13 +42,15 @@ export default function ViewPosts() {
       }
     });
   };
-  useEffect(() => {
-    preload();
-  }, []);
+  // useEffect(() => {
+  //   preload();
+  // }, []);
   return (
     <Base title="">
       <div className="row d-flex">
-        {posts &&
+
+        <h3>Under progress...</h3>
+        {posts.length > 0 &&
           posts.map((post, key) => {
             return (
               <div key={key} className="col-4 mb-4 ">
