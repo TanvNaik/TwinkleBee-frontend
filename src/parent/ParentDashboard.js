@@ -103,11 +103,11 @@ const ParentDashboard = () => {
             
             {profile_pic && (
               <img width={"100%"} 
-                src={`http://localhost:8800/image/${profile_pic}`}
+                src={`https://twinklebee-api.onrender.com/image/${profile_pic}`}
               />
             )}
             {!profile_pic && (
-              <img src={`http://localhost:8800/image/default_female_pp.png`} />
+              <img src={`https://twinklebee-api.onrender.com/image/default_female_pp.png`} />
             )}
         
         
